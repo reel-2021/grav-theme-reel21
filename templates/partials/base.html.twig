@@ -1,70 +1,55 @@
 {% set theme_config = attribute(config.themes, config.system.pages.theme) %}
 <!DOCTYPE html>
-<html lang="{{ (grav.language.getActive ?: grav.config.site.default_lang)|e }}">
+<html lang="{{ grav.language.getActive ?: grav.config.site.default_lang }}">
 <head>
 {% block head %}
     <meta charset="utf-8" />
-    <title>{% if header.title %}{{ header.title|e }} | {% endif %}{{ site.title|e }}</title>
+    <title>{{ site.title|e('html') }}{% if page.menu %} | {{ page.menu|e('html') }}{% endif %}</title>
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% include 'partials/metadata.html.twig' %}
 
-    <link rel="icon" type="image/png" href="{{ url('theme://images/logo.png')|e }}" />
-    <link rel="canonical" href="{{ page.url(true, true)|e }}" />
+    {% include 'partials/site-icons.html.twig' %}
 {% endblock head %}
 
 {% block stylesheets %}
-    {% do assets.addCss('https://unpkg.com/purecss@1.0.0/build/pure-min.css', 100) %}
-    {% do assets.addCss('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', 99) %}
-    {% do assets.addCss('theme://css/custom.css', 98) %}
+    {% do assets.addCss('theme://css/bootstrap-reel.css', 100) %}
+    {% do assets.addCss('theme://bootsrap-icons/font/bootstrap-icons.css', 99) %}
 {% endblock %}
 
 {% block javascripts %}
-    {% do assets.addJs('jquery', 100) %}
+    {% do assets.addJs('theme://js/bootstrap.min.js', 100) %}
+    {% do assets.addJs('theme://js/jquery-3.5.1.min.js', 99) %}
+    {% do assets.addJs('theme://js/honeypotter.js', 98) %}
 {% endblock %}
 
 {% block assets deferred %}
     {{ assets.css()|raw }}
-    {{ assets.js()|raw }}
 {% endblock %}
 </head>
-<body id="top" class="{{ page.header.body_classes|e }}">
+<body class="container min-vh-100 d-flex flex-column justify-content-between">
 
 {% block header %}
-    <div class="header">
-        <div class="wrapper padding">
-            <a class="logo left" href="{{ home_url|e }}">
-                <i class="fa fa-rebel"></i>
-                {{ config.site.title|e }}
-            </a>
-            {% block header_navigation %}
-            <nav class="main-nav">
-                {% include 'partials/navigation.html.twig' %}
-            </nav>
-            {% endblock %}
-        </div>
-    </div>
+<header class="my-4">
+    {% include 'partials/navigation.html.twig' %}
+</header>
 {% endblock %}
 
 {% block body %}
-    <section id="body">
-        <div class="wrapper padding">
-        {% block content %}{% endblock %}
-        </div>
-    </section>
+<main lang="de" class="my-auto">
+    {% block content %}{% endblock %}
+</main>
 {% endblock %}
 
 {% block footer %}
-    <div class="footer text-center">
-        <div class="wrapper padding">
-            <p><a href="http://getgrav.org">Grav</a> was <i class="fa fa-code"></i> with <i class="fa fa-heart"></i> by <a href="http://www.rockettheme.com">RocketTheme</a>.</p>
-        </div>
-    </div>
+<footer class="mt-5 mb-4 mb-md-0 text-center font-weight-light">
+    {% include 'partials/footer.html.twig' %}
+</footer>
 {% endblock %}
 
 {% block bottom %}
-    {{ assets.js('bottom')|raw }}
+    {{ assets.js()|raw }}
 {% endblock %}
 
 </body>
