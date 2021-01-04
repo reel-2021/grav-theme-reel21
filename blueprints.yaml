@@ -2,16 +2,16 @@ name: REEL 21 Theme
 slug: reel21
 type: theme
 version: 0.1.0
-description: The Theme of the Réunion Européenne des Étudiants Luxembourgeois 2021 Website
+description: The Theme of the Réunion Européenne des Étudiants Luxembourgeois 2021 Website based on Bootstrap 5.
 icon: rebel
 author:
   name: Jo Pletsch
   email: jo.pletsch@reel.lu
-homepage: https://github.com/jo-pletsch/grav-theme-reel21
-demo: http://demo.yoursite.com
+homepage: https://github.com/reel-2021/grav-theme-reel21
+demo: https://www.reel.lu
 keywords: grav, theme, etc
-bugs: https://github.com/jo-pletsch/grav-theme-reel21/issues
-readme: https://github.com/jo-pletsch/grav-theme-reel21/blob/develop/README.md
+bugs: https://github.com/reel-2021/grav-theme-reel21/issues
+readme: https://github.com/reel-2021/grav-theme-reel21/blob/develop/README.md
 license: MIT
 
 dependencies:

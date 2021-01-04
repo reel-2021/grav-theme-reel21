@@ -1,7 +1,9 @@
-# Reel21 Theme
+# REEL 2021 Grav Theme
 
-The **Reel21** Theme is for [Grav CMS](http://github.com/getgrav/grav).  This README.md file should be modified to describe the features, installation, configuration, and general usage of this theme.
+This is the theme used on the Grav Website for this year's (2021) REEL.
 
-## Description
+It is based on Bootstrap 5 and uses assets from Bootstrap-Icons.
 
-Reel 2021 Theme
+## Site
+
+<https://www.reel.lu/>
