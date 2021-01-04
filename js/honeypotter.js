@@ -1,7 +1,6 @@
 // Defer email spam bots with an easy method
 
-$(function(){
-    $("#email").hover(function() {
-        $(this).attr("href", $(this).attr("href").replace("honeypot", "kontakt"));
-    });
-});
+const e = document.getElementById("email");
+e.onmouseover = function() {
+    e.setAttribute("href", e.getAttribute("href").replace("honeypot", "kontakt"));
+};
