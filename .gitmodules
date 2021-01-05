@@ -1,3 +1,6 @@
 [submodule "scss/bootstrap"]
 	path = scss/bootstrap
 	url = https://github.com/twbs/bootstrap
+[submodule "icons"]
+	path = icons
+	url = https://github.com/twbs/icons
