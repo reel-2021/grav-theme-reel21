@@ -1,7 +1,6 @@
 {% macro loop(page, level) %}
 	{% for p in page.children.visible %}
 		{% set current_page = (p.active or p.activeChild) ? 'active' : '' %}
-		{% set is_dropdown = (level > 0) ? 'dropdown-item' : '' %}
 		{% if p.children.visible.count > 0 %}
 			<li class="nav-item dropdown">
 				<a class="nav-link dropdown-toggle  {{ current_page }}" href="#" data-bs-toggle="dropdown">
@@ -32,7 +31,11 @@
 
 <nav class="navbar navbar-expand-sm navbar-light bg-light">
 	<div class="container">
-		<a class="navbar-brand" href="#">Navbar</a>
+		{% if page.url != '/' %}
+			<a class="navbar-brand" href="/">
+				<img src={{ url('theme://images/reel-logo.svg') }} height="60px">
+			</a>
+		{% endif %}
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>

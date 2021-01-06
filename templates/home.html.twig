@@ -3,10 +3,10 @@
 {% block content %}
 <div class="row justify-content-between">
     <div class="col-9 col-md-5 col-lg-4">
-        <div class="reel-logo"></div>
+        <img src={{ url('theme://images/reel-logo.svg') }} class="mw-100 mh-100">
     </div>
-    <div class="col-12 col-md-7 my-md-auto mt-5">
-        {{ page.content }}
+    <div class="col-12 col-md-7 my-md-auto my-5">
+        {{ page.content|raw }}
     </div>
 </div>
 {% endblock %}
