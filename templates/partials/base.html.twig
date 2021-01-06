@@ -27,22 +27,22 @@
     {{ assets.css()|raw }}
 {% endblock %}
 </head>
-<body class="container min-vh-100 d-flex flex-column justify-content-between">
+<body class="min-vh-100 d-flex flex-column justify-content-between">
 
 {% block header %}
-<header class="my-4">
+<header class="bg-light pt-4 pb-2 mb-5">
     {% include 'partials/navigation.html.twig' %}
 </header>
 {% endblock %}
 
 {% block body %}
-<main lang="de" class="my-auto">
+<main class="container" lang="de" class="my-auto">
     {% block content %}{% endblock %}
 </main>
 {% endblock %}
 
 {% block footer %}
-<footer class="mt-5 mb-4 mb-md-0 text-center font-weight-light">
+<footer class="bg-light pt-5 pb-4 pb-md-0 text-center font-weight-light">
     {% include 'partials/footer.html.twig' %}
 </footer>
 {% endblock %}
