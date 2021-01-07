@@ -19,7 +19,7 @@
 {% endblock %}
 
 {% block javascripts %}
-    {% do assets.addJs('theme://js/bootstrap.min.js', 100) %}
+    {% do assets.addJs('theme://js/bootstrap.bundle.min.js', 100) %}
     {% do assets.addJs('theme://js/honeypotter.js', 99) %}
 {% endblock %}
 
@@ -30,7 +30,7 @@
 <body class="min-vh-100 d-flex flex-column justify-content-between">
 
 {% block header %}
-<header class="bg-light pt-4 pb-2 mb-5">
+<header class="container border-bottom pt-4 pb-3 mb-5">
     {% include 'partials/navigation.html.twig' %}
 </header>
 {% endblock %}
@@ -42,7 +42,7 @@
 {% endblock %}
 
 {% block footer %}
-<footer class="bg-light pt-5 pb-4 pb-md-0 text-center font-weight-light">
+<footer class="container border-top pt-5 pb-4 pb-md-0 mt-5 text-center font-weight-light">
     {% include 'partials/footer.html.twig' %}
 </footer>
 {% endblock %}
