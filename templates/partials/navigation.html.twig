@@ -3,7 +3,7 @@
 		{% set current_page = (p.active or p.activeChild) ? 'active' : '' %}
 		{% if p.children.visible.count > 0 %}
 			<li class="nav-item dropdown">
-				<a class="nav-link dropdown-toggle  {{ current_page }}" href="#" data-bs-toggle="dropdown">
+				<a class="nav-link dropdown-toggle {{ current_page }}" href="#" data-bs-toggle="dropdown">
 					{% if p.header.icon %}<i class="bi-{{ p.header.icon }}"></i>{% endif %}
 					{{ p.menu }}
 				</a>
@@ -29,20 +29,17 @@
 	{% endfor %}
 {% endmacro %}
 
-<nav class="navbar navbar-expand-sm navbar-light bg-light">
-	<div class="container">
+<div class="row align-items-end justify-content-center">
+	<div class="col-auto">
 		{% if page.url != '/' %}
 			<a class="navbar-brand" href="/">
-				<img src={{ url('theme://images/reel-logo.svg') }} height="60px">
+				<img src={{ url('theme://images/reel-logo.svg') }} height="100px">
 			</a>
 		{% endif %}
-		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="collapse navbar-collapse"  id="navbarMain">
-			<ul class="navbar-nav mx-auto">
-				{{ _self.loop(pages, 0) }}
-			</ul>
-		</div>
 	</div>
-</nav>
+	<div class="col-12 col-lg-6">
+		<ul class="nav nav-pills justify-content-center">
+			{{ _self.loop(pages, 0) }}
+		</ul>
+	</div>
+</div>
