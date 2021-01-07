@@ -1,1 +1,46 @@
+/*
+REEL 2021 Bootstrap Theme
+Jo Pletsch - 2021
+*/
+
+$light:		#B6B1B3;
+$dark:		#506B9B;
+$primary:	#527AAF;
+$secondary:	#25244C;
+$success:	#5fa670;
+$info:		#282d57;
+$warning:	#dc9638;
+$danger:    #f44336;
+
+//$body-bg:		#272855;
+//$body-color:	#F3F0F0;
+
+//$text-muted:    darken($body-color, 30%);
+
+//$component-active-color: $dark;
+
+//$border-color:   $light;
+//$dropdown-bg:    $dark;
+//$dropdown-link-color:  $body-color;
+
+$headings-color: 	$dark;
+
+//$link-color:				$primary;
+//$link-hover-color:			lighten($link-color, 15%);
+
+//$component-active-color:	$dark;
+
+
+//$btn-border-radius:           0;
+//$btn-border-radius-sm:        0;
+//$btn-border-radius-lg:        0;
+
+
 @import "./bootstrap/scss/bootstrap";
+
+@import "./nav";
+@import "./forms";
+
+@import "./diamonds";
+@import "./logo";
+

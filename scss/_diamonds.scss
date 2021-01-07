@@ -1,0 +1,35 @@
+$diamond-color: $gray-200;
+$diamond-size: 20rem;
+$diamond-spacing: 2rem;
+
+$diamond-top: -20rem;
+$diamond-left: 10vw;
+
+@mixin diamond($top, $left) {
+    position: absolute;
+    height: $diamond-size;
+    width: $diamond-size;
+    background-color: $diamond-color;
+    top: $top * ($diamond-size + $diamond-spacing);
+    left: $left * ($diamond-size + $diamond-spacing);
+    z-index: -200;
+}
+
+.diamonds {
+    position: absolute;
+    top: $diamond-top;
+    left: $diamond-left;
+    transform: rotate(45deg);
+    transform-origin: 0;
+    max-width: 100vw;
+    z-index: -200;
+}
+
+$list: 0, 1, 2, 3, 4, 5, 6, 7;
+
+@each $var in $list {
+    .diamond-#{$var+1} {
+        @include diamond(ceil($var/2), floor($var/2));
+    }
+}
+
