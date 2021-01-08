@@ -1,0 +1,21 @@
+// Define the modified color-map
+
+$light:		#A1C6CC;
+$dark:		#487DB8;
+$primary:	#EBDFA8;
+$secondary:	#ED8274;
+$success:	#5fa670;
+$info:		#282d57;
+$warning:	#dc9638;
+$danger:    #f44336;
+
+$body-bg:		#212138;
+$body-color:	#f3f3f0;
+
+$diamond-color: darken($body-bg, 2%);
+
+$headings-color: $dark;
+
+$reel-logo-color-1:	$body-color;
+$reel-logo-color-2:	$body-color;
+$reel-logo-color-3:	$light;
