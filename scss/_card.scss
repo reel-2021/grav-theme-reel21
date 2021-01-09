@@ -1,5 +1,7 @@
-:checked + .card {
+.card {
+    :checked + & {
     background-color: $primary;
+    }
 
     .card-title {
         color: $body-color;

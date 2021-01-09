@@ -4654,7 +4654,7 @@ form .form-field .form-floating > input:not(:placeholder-shown) ~ label,
 :checked + .card {
   background-color: #666ab0;
 }
-:checked + .card .card-title {
+.card .card-title {
   color: #f3f3f0;
 }
 
