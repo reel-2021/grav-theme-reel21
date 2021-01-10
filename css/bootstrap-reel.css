@@ -308,6 +308,10 @@ button {
   border-radius: 0;
 }
 
+button:focus:not(:focus-visible) {
+  outline: 0;
+}
+
 input,
 button,
 select,
@@ -2466,7 +2470,7 @@ textarea.form-control-lg {
   appearance: none;
 }
 .form-range:focus {
-  outline: none;
+  outline: 0;
 }
 .form-range:focus::-webkit-slider-thumb {
   box-shadow: 0 0 0 1px #2a2a2e, 0 0 0 0.25rem rgba(102, 106, 176, 0.25);
@@ -4340,7 +4344,7 @@ form .form-field .form-floating > input:not(:placeholder-shown) ~ label,
   opacity: 0.75;
 }
 .btn-close:focus {
-  outline: none;
+  outline: 0;
   box-shadow: 0 0 0 0.25rem rgba(102, 106, 176, 0.25);
   opacity: 1;
 }
@@ -4651,10 +4655,6 @@ form .form-field .form-floating > input:not(:placeholder-shown) ~ label,
     border-radius: 0;
   }
 }
-body {
-  overflow-x: hidden;
-}
-
 .sticky-top {
   position: sticky;
   top: 1rem;
@@ -4668,13 +4668,19 @@ body {
 }
 
 .diamonds {
-  position: absolute;
+  position: relative;
   top: -20rem;
   left: 10vw;
   transform: rotate(45deg);
   transform-origin: 0;
-  max-width: 100vw;
   z-index: -200;
+}
+
+.background {
+  position: absolute;
+  width: 100vw;
+  height: 100%;
+  overflow: hidden;
 }
 
 .diamond-1 {
