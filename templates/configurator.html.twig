@@ -10,19 +10,18 @@
         {% for config in configs %}
             {% set input_type = (config.type == 'radio') ? 'radio' : 'checkbox' %}
             {% set checked = (input_type == 'radio') ? 'checked' : '' %} {# check first radio #}
-            {% set child_class = (config.is_child) ? 'child-config mx-4' : '' %}
+            {% set child_class = (config.is_child) ? 'child-config mx-5' : '' %}
             {% set header_type = (config.is_child) ? 'h4' : 'h3' %}
             {% set card_header_type = (config.is_child) ? 'h5' : 'h4' %}
-            {% set header_class = (config.is_child) ? '' : 'mt-5' %}
 
             <div id="{{ config.slug }}" class="{{ child_class }}">
-                <{{ header_type }} class="{{ header_class }}">
+                <{{ header_type }}>
                     <i class="fas fa-{{ config.icon }}"></i>
                     {{ config.name }}
                 </{{ header_type }}>
-                <div class="row row-cols-1 row-cols-md-2 g-2 mb-2">
+                <div class="row row-cols-1 row-cols-md-2 g-2 mb-5">
                     {% for option in config.options %}
-                    <div class="col form-check">
+                    <div class="col">
                         <input type="{{ input_type }}" class="btn-check" name="{{ config.slug }}"
                             id="{{ config.slug }}-{{ option.slug }}" value="{{ option.price }}"
                             autocomplete="off" {{ checked }} data-child="{{ option.child }}">
