@@ -3,4 +3,4 @@
 	url = https://github.com/twbs/bootstrap
 [submodule "icons"]
 	path = icons
-	url = https://github.com/twbs/icons
+	url = https://github.com/FortAwesome/Font-Awesome.git
