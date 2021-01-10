@@ -4673,7 +4673,6 @@ form .form-field .form-floating > input:not(:placeholder-shown) ~ label,
   left: 10vw;
   transform: rotate(45deg);
   transform-origin: 0;
-  z-index: -200;
 }
 
 .background {
@@ -4681,6 +4680,7 @@ form .form-field .form-floating > input:not(:placeholder-shown) ~ label,
   width: 100vw;
   height: 100%;
   overflow: hidden;
+  z-index: -200;
 }
 
 .diamond-1 {
@@ -4690,7 +4690,6 @@ form .form-field .form-floating > input:not(:placeholder-shown) ~ label,
   background-color: #2f2f33;
   top: 0rem;
   left: 0rem;
-  z-index: -200;
 }
 
 .diamond-2 {
@@ -4700,7 +4699,6 @@ form .form-field .form-floating > input:not(:placeholder-shown) ~ label,
   background-color: #2f2f33;
   top: 22rem;
   left: 0rem;
-  z-index: -200;
 }
 
 .diamond-3 {
@@ -4710,7 +4708,6 @@ form .form-field .form-floating > input:not(:placeholder-shown) ~ label,
   background-color: #2f2f33;
   top: 22rem;
   left: 22rem;
-  z-index: -200;
 }
 
 .diamond-4 {
@@ -4720,7 +4717,6 @@ form .form-field .form-floating > input:not(:placeholder-shown) ~ label,
   background-color: #2f2f33;
   top: 44rem;
   left: 22rem;
-  z-index: -200;
 }
 
 .diamond-5 {
@@ -4730,7 +4726,6 @@ form .form-field .form-floating > input:not(:placeholder-shown) ~ label,
   background-color: #2f2f33;
   top: 44rem;
   left: 44rem;
-  z-index: -200;
 }
 
 .diamond-6 {
@@ -4740,7 +4735,6 @@ form .form-field .form-floating > input:not(:placeholder-shown) ~ label,
   background-color: #2f2f33;
   top: 66rem;
   left: 44rem;
-  z-index: -200;
 }
 
 .diamond-7 {
@@ -4750,7 +4744,6 @@ form .form-field .form-floating > input:not(:placeholder-shown) ~ label,
   background-color: #2f2f33;
   top: 66rem;
   left: 66rem;
-  z-index: -200;
 }
 
 .diamond-8 {
@@ -4760,7 +4753,6 @@ form .form-field .form-floating > input:not(:placeholder-shown) ~ label,
   background-color: #2f2f33;
   top: 88rem;
   left: 66rem;
-  z-index: -200;
 }
 
 .reel-logo {
