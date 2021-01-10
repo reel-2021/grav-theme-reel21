@@ -4,34 +4,57 @@
 {% set configs = page.header.configs %}
 
 {% block content %}
-    <h2>Options</h2>
-    {% for config in configs %}
-        {% set input_type = (config.type == 'radio') ? 'radio' : 'checkbox' %}
-        <h3>{{ config.name }}</h3>
-        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 mb-4">
-        {% set checked = 'checked' %}
-        {% for option in config.options %}
-            <div class="col form-check">
-                <input type="{{ input_type }}" class="btn-check" name="{{ config.slug }}" id="{{ config.slug }}-{{ option.slug }}" value="{{ option.price }}" autocomplete="off" {{ checked }}>
-                {% set checked = '' %}
-                <label class="card" for="{{ config.slug }}-{{ option.slug }}" role="button">
-                    <div class="card-body">
-                        <h4 class="card-title">
-                            {{ option.name }} <span class="text-muted float-end">+{{ option.price }}€</span>
-                        </h4>
-                        <ul class="card-text">
-                        {% for element in option.include %}
-                            <li>{{ element }}</li>
-                        {% endfor %}
-                        </ul>
+<div class="row">
+    <div class="col-12 col-xl-8">
+        <h2>Options</h2>
+        {% for config in configs %}
+            {% set input_type = (config.type == 'radio') ? 'radio' : 'checkbox' %}
+            {% set checked = (input_type == 'radio') ? 'checked' : '' %} {# check first radio #}
+            {% set child_class = (config.is_child) ? 'child-config mx-4' : '' %}
+            {% set header_type = (config.is_child) ? 'h4' : 'h3' %}
+            {% set card_header_type = (config.is_child) ? 'h5' : 'h4' %}
+            {% set header_class = (config.is_child) ? '' : 'mt-5' %}
+
+            <div id="{{ config.slug }}" class="{{ child_class }}">
+                <{{ header_type }} class="{{ header_class }}">
+                    <i class="fas fa-{{ config.icon }}"></i>
+                    {{ config.name }}
+                </{{ header_type }}>
+                <div class="row row-cols-1 row-cols-md-2 g-2 mb-2">
+                    {% for option in config.options %}
+                    <div class="col form-check">
+                        <input type="{{ input_type }}" class="btn-check" name="{{ config.slug }}"
+                            id="{{ config.slug }}-{{ option.slug }}" value="{{ option.price }}"
+                            autocomplete="off" {{ checked }} data-child="{{ option.child }}">
+                        {% set checked = '' %}
+                        <label class="card" for="{{ config.slug }}-{{ option.slug }}" role="button">
+                            <div class="card-body">
+                                <{{ card_header_type }} class="card-title">
+                                    {{ option.name }}
+                                    <span class="text-muted float-end">+{{ option.price }}€</span>
+                                </{{ card_header_type }}>
+                                <ul class="card-text">
+                                {% for element in option.include %}
+                                    <li>{{ element }}</li>
+                                {% endfor %}
+                                </ul>
+                            </div>
+                        </label>
                     </div>
-                </label>
+                    {% endfor %}
+                </div>
             </div>
         {% endfor %}
-        </div>
-    {% endfor %}
+    </div>
 
-    <h2>
-        Total: <span id="total">0</span> €
-    </h2>
+    <div class="col-12 col-xl-4">
+        <div class="sticky-top pt-5">
+            <h2>Votre choix</h2>
+            <ul id="total-list">
+                <li>Choix</li>
+            </ul>
+            <h3>Total: <span id="total">0</span> €</h3>
+        </div>
+    </div>
+</div>
 {% endblock %}
