@@ -4655,6 +4655,11 @@ body {
   overflow-x: hidden;
 }
 
+.sticky-top {
+  position: sticky;
+  top: 1rem;
+}
+
 :checked + .card {
   background-color: #666ab0;
 }

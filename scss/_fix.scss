@@ -3,3 +3,8 @@
 body {
     overflow-x: hidden;
 }
+
+.sticky-top {
+    position: sticky;
+    top: 1rem;
+}
