@@ -6,7 +6,7 @@
 <div class="container-xl">
 	<div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4">
     {% for entry in page.content|split('<hr />') %}
-	<div class="col p-sm-4">
+	<div class="col g-sm-3 g-md-5">
 		{{ entry|raw }}
 	</div>
 	{% endfor %}
