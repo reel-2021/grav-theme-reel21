@@ -10,11 +10,11 @@
         {% for config in configs %}
             {% set input_type = (config.type == 'radio') ? 'radio' : 'checkbox' %}
             {% set checked = (input_type == 'radio') ? 'checked' : '' %} {# check first radio #}
-            {% set child_class = (config.is_child) ? 'child-config mx-5' : '' %}
+            {% set child_class = (config.is_child) ? 'config-child collapse' : '' %}
             {% set header_type = (config.is_child) ? 'h4' : 'h3' %}
             {% set card_header_type = (config.is_child) ? 'h5' : 'h4' %}
 
-            <div id="{{ config.slug }}" class="{{ child_class }}">
+            <div id="{{ config.slug }}" class="config {{ child_class }}">
                 <{{ header_type }}>
                     <i class="fas fa-{{ config.icon }}"></i>
                     {{ config.name }}
