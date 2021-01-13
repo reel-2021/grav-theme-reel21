@@ -1,24 +1,50 @@
 {% extends 'partials/base.html.twig' %}
 {% do assets.addJs('theme://js/configurator.js', 98) %}
 
+{% set formulas = page.header.formulas %}
 {% set configs = page.header.configs %}
 
 {% block content %}
 <div class="row">
     <div class="col-12 col-xl-8">
-        <h2>Options</h2>
+        <h2>Formules</h2>
+        <div class="row row-cols-1 row-cols-md-2 g-2 mb-5">
+            {% set checked = 'checked' %}
+            {% for option in formulas %}
+            <div class="col">
+                {% set allow_config = (option.is_set) ? 'data-config=set' : 'data-config=custom' %}
+                <input type="radio" class="btn-check" name="formula"
+                    id="formula-{{ option.slug }}" value="{{ option.price }}"
+                    autocomplete="off" {{ checked }} {{ allow_config }}>
+                {% set checked = '' %}
+                <label class="card" for="formula-{{ option.slug }}" role="button">
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            {{ option.name }}
+                            <span class="text-muted float-end">+{{ option.price }}€</span>
+                        </h4>
+                        <ul class="card-text">
+                        {% for element in option.include %}
+                            <li>{{ element }}</li>
+                        {% endfor %}
+                        </ul>
+                    </div>
+                </label>
+            </div>
+            {% endfor %}
+        </div>
+
+        <h2>Configuration</h2>
         {% for config in configs %}
             {% set input_type = (config.type == 'radio') ? 'radio' : 'checkbox' %}
             {% set checked = (input_type == 'radio') ? 'checked' : '' %} {# check first radio #}
-            {% set child_class = (config.is_child) ? 'config-child collapse' : '' %}
-            {% set header_type = (config.is_child) ? 'h4' : 'h3' %}
-            {% set card_header_type = (config.is_child) ? 'h5' : 'h4' %}
+            {% set child_class = (config.is_child) ? 'config-child collapse' : 'collapse show' %}
 
             <div id="{{ config.slug }}" class="config {{ child_class }}">
-                <{{ header_type }}>
+                <h3>
                     <i class="fas fa-{{ config.icon }}"></i>
                     {{ config.name }}
-                </{{ header_type }}>
+                </h3>
                 <div class="row row-cols-1 row-cols-md-2 g-2 mb-5">
                     {% for option in config.options %}
                     <div class="col">
@@ -28,10 +54,10 @@
                         {% set checked = '' %}
                         <label class="card" for="{{ config.slug }}-{{ option.slug }}" role="button">
                             <div class="card-body">
-                                <{{ card_header_type }} class="card-title">
+                                <h4 class="card-title">
                                     {{ option.name }}
                                     <span class="text-muted float-end">+{{ option.price }}€</span>
-                                </{{ card_header_type }}>
+                                </h4>
                                 <ul class="card-text">
                                 {% for element in option.include %}
                                     <li>{{ element }}</li>

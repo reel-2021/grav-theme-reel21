@@ -9,8 +9,33 @@ function parseConfigs() {
     list_element.innerHTML = "";
 
     for (let o of options) {
-        if (o.checked && o.hasAttribute("data-child")) {
-            active_children.push(o.getAttribute("data-child"));
+        if (o.checked) {
+            if (o.name == "formula") {
+                total += parseInt(o.value);
+                list_element.innerHTML += o.parentElement.getElementsByTagName("ul")[0].innerHTML;
+                if (o.getAttribute("data-config") == "set") {
+                    var collapseElementList = [].slice.call(document.querySelectorAll('.collapse'))
+                    collapseElementList.map(function (collapseEl) {
+                        let bsCollapse = new bootstrap.Collapse(collapseEl, {toggle: false})
+                        bsCollapse.hide();
+                        return;
+                    })
+                    return;
+                }
+                else {
+                    var collapseElementList = [].slice.call(document.querySelectorAll('.collapse'))
+                    collapseElementList.map(function (collapseEl) {
+                        let bsCollapse = new bootstrap.Collapse(collapseEl, {toggle: false})
+                        bsCollapse.show();
+                        return;
+                    })
+                }
+            }
+            else if (o.hasAttribute("data-child") && (active_children.includes(o.name) || !document.getElementById(o.name).classList.contains("config-child"))) {
+                active_children.push(o.getAttribute("data-child"));
+                total += parseInt(o.value);
+                list_element.innerHTML += o.parentElement.getElementsByTagName("ul")[0].innerHTML;
+            }
         }
     }
 
@@ -25,16 +50,6 @@ function parseConfigs() {
         }
     }
     
-    for (let o of options) {
-        if (o.checked && active_children.includes(o.name)) {
-            total += parseInt(o.value);
-            list_element.innerHTML += o.parentElement.getElementsByTagName("ul")[0].outerHTML;
-        }
-        else if (o.checked && !document.getElementById(o.name).classList.contains("config-child")) {
-            total += parseInt(o.value);
-            list_element.innerHTML += o.parentElement.getElementsByTagName("ul")[0].innerHTML;
-        }
-    }
     total_element.innerHTML = total;
 };
 
