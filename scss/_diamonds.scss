@@ -1,3 +1,5 @@
+@use "sass:math";
+
 $diamond-size: 20rem;
 $diamond-spacing: 2rem;
 
@@ -33,7 +35,7 @@ $list: 0, 1, 2, 3, 4, 5, 6, 7;
 
 @each $var in $list {
     .diamond-#{$var+1} {
-        @include diamond(ceil($var/2), floor($var/2));
+        @include diamond(ceil(math.div($var, 2)), floor(math.div($var, 2)));
     }
 }
 
