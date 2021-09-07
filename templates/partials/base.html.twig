@@ -52,7 +52,9 @@
 
 {% block footer %}
 <footer class="container border-top pt-5 pb-4 pb-md-0 mt-5 text-center font-weight-light">
-    {% include 'partials/sponsors.html.twig' %}
+    {% if page.template != 'sponsors' %}
+        {% include 'partials/sponsors.html.twig' %}
+    {% endif %}
     {% include 'partials/footer.html.twig' %}
 </footer>
 {% endblock %}
