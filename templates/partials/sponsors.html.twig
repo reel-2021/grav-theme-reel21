@@ -1,97 +1,21 @@
 <div class="container mb-5 text-center">
     <div class="row row-cols-2 row-cols-md-3 justify-content-evenly align-items-center">
+    {% for sl in grav.theme.config.sponsors_l|keys %}
         <div class="col my-3">
             <div class="bg-white rounded p-3">
-            	 <a href="https://govjobs.public.lu" target="_blank"><img src="{{ url('theme://sponsors/govjobs.svg') }}"></a>
+            	 <a href="https://{{ grav.theme.config.sponsors_l[sl] }}" target="_blank"><img src="{{ url("theme://sponsors/#{sl}.svg") }}"></a>
             </div>
         </div>
-        <div class="col my-3">
-            <div class="bg-white rounded p-3">
-            	 <a href="https://schroeder.lu" target="_blank"><img src="{{ url('theme://sponsors/schroederassocies.svg') }}"></a>
-            </div>
-        </div>
-        <div class="col my-3">
-            <div class="bg-white rounded p-3">
-            	 <a href="https://wort.lu" target="_blank"><img src="{{ url('theme://sponsors/wort.svg') }}"></a>
-            </div>
-        </div>
+    {% endfor %}
     </div>
     
     <div class="row row-cols-4 row-cols-md-6 justify-content-evenly align-items-center">
+    {% for sm in grav.theme.config.sponsors_m|keys %}
         <div class="col my-3">
             <div class="bg-white rounded p-3">
-            	 <a href="https://cssf.lu" target="_blank"><img style="max-height:80px; max-width:100%" src="{{ url('theme://sponsors/cssf.svg') }}"></a>
+            	 <a href="https://{{ grav.theme.config.sponsors_m[sm] }}" target="_blank"><img style="max-height:80px; max-width:100%" src="{{ url("theme://sponsors/#{sm}.svg") }}"></a>
             </div>
         </div>
-        <div class="col my-3">
-            <div class="bg-white rounded p-3">
-            	 <a href="https://creos.lu" target="_blank"><img style="max-height:80px; max-width:100%" src="{{ url('theme://sponsors/creos.svg') }}"></a>
-            </div>
-        </div>
-        <div class="col my-3">
-            <div class="bg-white rounded p-3">
-            	 <a href="https://bcee.lu" target="_blank"><img style="max-height:80px; max-width:100%" src="{{ url('theme://sponsors/bcee.svg') }}"></a>
-            </div>
-        </div>
-        <div class="col my-3">
-            <div class="bg-white rounded p-3">
-            	 <a href="https://cactus.lu" target="_blank"><img style="max-height:80px; max-width:100%" src="{{ url('theme://sponsors/cactus.svg') }}"></a>
-            </div>
-        </div>
-        <div class="col my-3">
-            <div class="bg-white rounded p-3">
-            	 <a href="https://davinci.lu" target="_blank"><img style="max-height:80px; max-width:100%" src="{{ url('theme://sponsors/davinci.svg') }}"></a>
-            </div>
-        </div>
-        <div class="col my-3">
-            <div class="bg-white rounded p-3">
-            	 <a href="https://chambredecommerce.lu" target="_blank"><img style="max-height:80px; max-width:100%" src="{{ url('theme://sponsors/cc.svg') }}"></a>
-            </div>
-        </div>
-        <div class="col my-3">
-            <div class="bg-white rounded p-3">
-            	 <a href="https://paulwurth.lu" target="_blank"><img style="max-height:80px; max-width:100%" src="{{ url('theme://sponsors/paul-wurth.svg') }}"></a>
-            </div>
-        </div>
-        <div class="col my-3">
-            <div class="bg-white rounded p-3">
-            	 <a href="https://www.vdl.lu/fr/travailler/trouver-un-emploi/offres-demploi-de-la-ville" target="_blank"><img style="max-height:80px; max-width:100%" src="{{ url('theme://sponsors/vdl.svg') }}"></a>
-            </div>
-        </div>
-        <div class="col my-3">
-            <div class="bg-white rounded p-3">
-            	 <a href="https://www.lsc.lu" target="_blank"><img style="max-height:80px; max-width:100%" src="{{ url('theme://sponsors/lsc.svg') }}"></a>
-            </div>
-        </div>
-        <div class="col my-3">
-            <div class="bg-white rounded p-3">
-            	 <a href="https://bakertilly.global" target="_blank"><img style="max-height:80px; max-width:100%" src="{{ url('theme://sponsors/bakertilly.svg') }}"></a>
-            </div>
-        </div>
-        <div class="col my-3">
-            <div class="bg-white rounded p-3">
-            	 <a class="m-auto" href="https://lalux.lu" target="_blank"><img style="max-height:80px; max-width:100%" src="{{ url('theme://sponsors/lalux.svg') }}"></a>
-            </div>
-        </div>
-        <div class="col my-3">
-            <div class="bg-white rounded p-3">
-            	 <a href="https://post.lu" target="_blank"><img style="max-height:80px; max-width:100%" src="{{ url('theme://sponsors/post.svg') }}"></a>
-            </div>
-        </div>
-        <div class="col my-3">
-            <div class="bg-white rounded p-3">
-            	 <a href="https://aneil.lu" target="_blank"><img style="max-height:80px; max-width:100%" src="{{ url('theme://sponsors/aneil.svg') }}"></a>
-            </div>
-        </div>
-        <div class="col my-3">
-            <div class="bg-white rounded p-3">
-            	 <a href="https://acel.lu" target="_blank"><img style="max-height:80px; max-width:100%" src="{{ url('theme://sponsors/acel.svg') }}"></a>
-            </div>
-        </div>
-        <div class="col my-3">
-            <div class="bg-white rounded p-3">
-            	 <a href="https://lsm.lu" target="_blank"><img style="max-height:80px; max-width:100%" src="{{ url('theme://sponsors/lsm.svg') }}"></a>
-            </div>
-        </div>
+    {% endfor %}
     </div>
 </div>
