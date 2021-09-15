@@ -30,3 +30,16 @@ form:
           0: PLUGIN_ADMIN.DISABLED
         validate:
           type: bool
+    sponsors.large:
+        type: array
+        label: Large Sponsors
+    sponsors.medium:
+        type: array
+        label: Medium Sponsors
+    sponsors.small:
+        type: array
+        label: Small Sponsors
+    sponsors.xsmall:
+        type: array
+        label: Extra Small Sponsors
+        

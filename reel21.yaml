@@ -1,9 +1,10 @@
 enabled: true
 dropdown:
   enabled: true
-sponsors_l:
-  testl: test.lu
-sponsors_m:
-  testm: test.lu
+sponsors:
+  large:
+  medium:
+  small:
+  xsmall:
   
   
