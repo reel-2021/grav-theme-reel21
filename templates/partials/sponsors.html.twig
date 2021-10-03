@@ -3,7 +3,7 @@
     {% for sl in grav.theme.config.sponsors.large|keys %}
         <div class="col my-3">
             <div class="bg-white rounded p-3">
-            	 <a href="https://{{ grav.theme.config.sponsors.large[sl] }}" target="_blank"><img src="{{ url("theme://sponsors/#{sl}.svg") }}"></a>
+            	 <a href="https://{{ grav.theme.config.sponsors.large[sl] }}" target="_blank"><img style="max-width:100%"  src="{{ url("theme://sponsors/#{sl}.svg") }}"></a>
             </div>
         </div>
     {% endfor %}
@@ -14,6 +14,16 @@
         <div class="col my-3">
             <div class="bg-white rounded p-3">
             	 <a href="https://{{ grav.theme.config.sponsors.medium[sm] }}" target="_blank"><img style="max-height:80px; max-width:100%" src="{{ url("theme://sponsors/#{sm}.svg") }}"></a>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+    
+    <div class="row row-cols-4 row-cols-md-6 justify-content-evenly align-items-center">
+    {% for ss in grav.theme.config.sponsors.small|keys %}
+        <div class="col my-3">
+            <div class="bg-white rounded p-3">
+            	 <a href="https://{{ grav.theme.config.sponsors.small[ss] }}" target="_blank"><img style="max-height:80px; max-width:100%" src="{{ url("theme://sponsors/#{ss}.svg") }}"></a>
             </div>
         </div>
     {% endfor %}
